@@ -20,15 +20,24 @@
 * **Explanation:** Matches `c`, `f`, or `h` as the starting character, immediately followed by the static string `at`.
 
 ### Q3: Match file instances like `File01`, `file2`, `File3`
-* **Solution:** `[Ff]ile\d{1,2}` * **Explanation:** `[Ff]` handles uppercase/lowercase text. `\d{1,2}` targets a string ending in either a single or double-digit number. 
+* **Solution:** `[Ff]ile\d{1,2}` 
+* **Explanation:** `[Ff]` handles uppercase/lowercase text. `\d{1,2}` targets a string ending in either a single or double-digit number. 
 
-### Q4: Match variable spaces in `kali tools` * **Solution:** `kali\s+tools` * **Explanation:** `\s+` dynamically accommodates single spaces, double spaces, or tabs between the two words. 
+### Q4: Match variable spaces in `kali tools` 
+* **Solution:** `kali\s+tools`
+* **Explanation:** `\s+` dynamically accommodates single spaces, double spaces, or tabs between the two words. 
 
-### Q5: Match generic quoted strings/variable paths * **Solution:** `\S*\s*\S*` * **Explanation:** Fluidly spans across non-whitespace characters (`\S*`) and whitespace barriers (`\s*`). 
+### Q5: Match generic quoted strings/variable paths 
+* **Solution:** `\S*\s*\S*`
+* **Explanation:** Fluidly spans across non-whitespace characters (`\S*`) and whitespace barriers (`\s*`). 
 
-### Q6: Match lines starting with "Password:" + 10 chars (exclude '0') * **Solution:** `^Password:[^0]{10}` * **Explanation:** `^` anchors to line start. `[^0]` explicitly drops the number zero, and `{10}` enforces an exact character length. 
+### Q6: Match lines starting with "Password:" + 10 chars (exclude '0') 
+* **Solution:** `^Password:[^0]{10}` 
+* **Explanation:** `^` anchors to line start. `[^0]` explicitly drops the number zero, and `{10}` enforces an exact character length. 
 
-### Q7: Match lines explicitly starting with "username: " * **Solution:** `^username:\s` * **Explanation:** Uses `^` to lock to the start of the text line, followed by `\s` for the mandatory ending space.
+### Q7: Match lines explicitly starting with "username: " 
+* **Solution:** `^username:\s`
+* **Explanation:** Uses `^` to lock to the start of the text line, followed by `\s` for the mandatory ending space.
 
 ### Q8: Match lines not starting with a number
 * **Solution:** `^\D`
@@ -46,6 +55,10 @@
 * **Solution:** `^\$\d\$\S+`
 * **Explanation:** Line start (`^`) → Escaped dollar (`\$`) → ID digit (`\d`) → Escaped dollar (`\$`) → Trailing string characters (`\S+`).
 
-### Q12: Parse standard IPv4 addresses * **Solution:** `(\d{1,3}\.){3}\d{1,3}` * **Explanation:** Matches 1 to 3 digits followed by an escaped literal period (`\.`). Groups and repeats this configuration exactly 3 times, ending with the final 1-3 digit octet block.
+### Q12: Parse standard IPv4 addresses 
+* **Solution:** `(\d{1,3}\.){3}\d{1,3}`
+* **Explanation:** Matches 1 to 3 digits followed by an escaped literal period (`\.`). Groups and repeats this configuration exactly 3 times, ending with the final 1-3 digit octet block.
 
-### Q13: Extract email strings into distinct fields * **Solution:** `(\w+)@(\w+)\.com` * **Explanation:** Isolates user profile name `(\w+)`, crosses the `@` delimiter, isolates the corporate domain `(\w+)`, and closes on the escaped extension literal `\.com`
+### Q13: Extract email strings into distinct fields 
+* **Solution:** `(\w+)@(\w+)\.com`
+* **Explanation:** Isolates user profile name `(\w+)`, crosses the `@` delimiter, isolates the corporate domain `(\w+)`, and closes on the escaped extension literal `\.com`
